@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { push } from 'connected-react-router'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -7,8 +9,11 @@ import Divider from '@material-ui/core/Divider';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
+import { ActionButton } from './Buttons';
+import { CREATE } from '../constants/router';
 
-const Main = props => {
+const Main = ({ toCreate }) => {
+
   return (
     <div>
       <List component="nav" aria-label="main mailbox folders">
@@ -37,6 +42,8 @@ const Main = props => {
           <ListItemText primary="10" />
         </ListItem>
       </List>
+
+      <ActionButton onClick={toCreate} />
     </div>
   );
 };
@@ -45,4 +52,15 @@ Main.propTypes = {
 
 };
 
-export default Main;
+const mapStateToProps = state => ({
+
+});
+
+const mapDispatchToProps = dispatch => ({
+  toCreate: id => dispatch(push(CREATE))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Main);

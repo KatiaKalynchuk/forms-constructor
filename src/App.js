@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import Container from '@material-ui/core/Container';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import './App.css';
-import Main from './components/Main';
+import Routes from './Routes';
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Main/>
+
+      <Routes/>
     </Container>
   );
 }
