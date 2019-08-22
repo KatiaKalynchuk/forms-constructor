@@ -9,7 +9,7 @@ import Routes from './Routes';
 function App() {
   return (
     <Container maxWidth="md">
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: '#1e374c' }}>
         <Toolbar>
           <Typography variant="h6">
             Forms Constructor

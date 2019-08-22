@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
 import List from '@material-ui/core/List';
@@ -9,13 +9,13 @@ import Divider from '@material-ui/core/Divider';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
-import { ActionButton } from './Buttons';
+import { ActionButton } from '../components/Buttons';
 import { CREATE } from '../constants/router';
 
 const Main = ({ toCreate }) => {
 
   return (
-    <div>
+    <Fragment>
       <List component="nav" aria-label="main mailbox folders">
         <ListItem button>
           <ListItemIcon>
@@ -44,7 +44,7 @@ const Main = ({ toCreate }) => {
       </List>
 
       <ActionButton onClick={toCreate} />
-    </div>
+    </Fragment>
   );
 };
 
