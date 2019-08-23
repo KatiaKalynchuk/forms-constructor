@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
+import uuidv1 from 'uuid/v1';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -57,7 +58,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  toCreate: id => dispatch(push(CREATE))
+  toCreate: id => dispatch(push(`${CREATE}/${uuidv1()}`))
 });
 
 export default connect(

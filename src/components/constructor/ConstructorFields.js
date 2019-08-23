@@ -6,9 +6,9 @@ import FieldItem from './FieldItem';
 const ConstructorFields = props => {
   return (
     <div className="constructor-fields">
-      <FieldItem text="Input" icon={ListRoundedIcon} />
-      <FieldItem text="Chackbox" icon={ListRoundedIcon} />
-      <FieldItem text="Radio" icon={ListRoundedIcon} />
+      <FieldItem text="Input" icon={ListRoundedIcon} type="input" />
+      <FieldItem text="Chackbox" icon={ListRoundedIcon} type="chackbox" />
+      <FieldItem text="Radio" icon={ListRoundedIcon} type="radio" />
     </div>
   );
 };

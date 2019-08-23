@@ -59,6 +59,7 @@ html, body {
   min-height: 500px;
   background-color: #fff;
   border: 5px solid #e7ecef;
+  padding: 20px 50px;
 }
 
 @keyframes App-logo-spin {
