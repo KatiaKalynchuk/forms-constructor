@@ -7,12 +7,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { useDrag } from 'react-dnd'
 import { addField } from '../../reducers/editor';
 import { fields } from '../../constants/fields';
-import { idRoutSelector } from '../../selectors/router';
+import { idRouteSelector } from '../../selectors/router';
 
 
 const FieldItem = ({ text, icon: Icon, type }) => {
   const dispatch = useDispatch();
-  const formId = useSelector(state => idRoutSelector(state));
+  const formId = useSelector(state => idRouteSelector(state));
 
   const [{ opacity }, dragRef] = useDrag({
     item: { type: 'field', text, id: type },

@@ -16,3 +16,4 @@ export default handleActions({
 const stateSelector = state => state[ReducerName];
 
 export const fieldsSelectorFactory = id => createSelector(stateSelector, (state) => state[id] || []);
+export const fieldsNumberSelectorFactory = id => createSelector(stateSelector, (state) => console.log('id', id) || state[id].length || 0);

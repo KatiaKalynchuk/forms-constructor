@@ -1,22 +1,18 @@
-import { createActions, handleActions, combineActions } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
+import { createSelector } from 'reselect'
 
-const defaultState = { counter: 10 };
+const ReducerName = 'forms';
 
-const { increment, decrement } = createActions({
-  INCREMENT: (amount = 1) => ({ amount }),
-  DECREMENT: (amount = 1) => ({ amount: -amount })
-});
+export const addForm = createAction('ADD_FORM');
 
-const reducer = handleActions(
-  {
-    [combineActions(increment, decrement)]: (
-      state,
-      { payload: { amount } }
-    ) => {
-      return { ...state, counter: state.counter + amount };
-    }
-  },
-  defaultState
-);
+export default handleActions({
+  [addForm]: (state, { payload: formId }) => ([
+    ...state,
+    formId,
+  ])
+}, []);
 
-export default reducer;
+
+const stateSelector = state => state[ReducerName];
+
+// export const fieldsSelectorFactory = id => createSelector(stateSelector, (state) => state[id] || []);
